@@ -12,6 +12,10 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+
   openingHours: {
     thu: {
       open: 12,
@@ -27,3 +31,53 @@ const restaurant = {
     },
   },
 };
+
+//Destructuring objects
+const { name, openingHours, categories } = restaurant;
+console.log(name, openingHours, categories);
+
+const {
+  name: restaurantName,
+  openingHours: hours,
+  categories: tags,
+} = restaurant;
+console.log(restaurantName, hours, tags);
+
+// destructuring arrays
+
+const arr = [1, 2, 3];
+// old method
+const a = arr[0];
+const b = arr[1];
+const c = arr[2];
+// new method
+
+const [x, y, z] = arr;
+console.log(x, y, z);
+console.log(arr);
+
+let [first, , second] = restaurant.categories;
+console.log(first, second);
+
+//switching
+[first, second] = [second, first];
+console.log(first, second);
+
+//receive 2 return values from a function
+console.log(restaurant.order(2, 0));
+const [v, h] = restaurant.order(2, 0);
+console.log(v, h);
+
+const nested = [2, 4, [5, 6]];
+// const [o, , p] = nested;
+// console.log(o, p);
+
+//destructuring inside destructuring
+const [o, , [p, l]] = nested;
+console.log(o, p, l);
+
+//default values
+//const [p,q,r] = [8,9]
+//(console.log(p,q,r); - 8,9,undefined)
+const [u = 1, q = 1, r = 1] = [8, 9]; // 1 in this case will be default value
+console.log(p, q, r);
