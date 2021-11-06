@@ -82,4 +82,4 @@ console.log(o, p, l);
 //const [p,q,r] = [8,9]
 //(console.log(p,q,r); - 8,9,undefined)
 const [u = 1, q = 1, r = 1] = [8, 9]; // 1 in this case will be default value
-console.log(p, q, r);
+console.log(u, q, r);
