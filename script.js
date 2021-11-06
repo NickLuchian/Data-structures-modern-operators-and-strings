@@ -43,6 +43,8 @@ const {
 } = restaurant;
 console.log(restaurantName, hours, tags);
 
+//default values case
+
 // destructuring arrays
 
 const arr = [1, 2, 3];
